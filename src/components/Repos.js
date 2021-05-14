@@ -1,9 +1,35 @@
-import React from 'react';
+import React, {useContext } from 'react';
 import styled from 'styled-components';
 import { GithubContext } from '../context/context';
+import { AuthWrapper } from '../pages';
 import { ExampleChart, Pie3D, Column3D, Bar3D, Doughnut2D } from './Charts';
 const Repos = () => {
-  return <h2>repos component</h2>;
+  const {repos } = useContext(GithubContext);
+  
+  const chartData = [
+    {
+      label: "HTML",
+      value: "20",
+    },
+
+    {
+      label: "Javascript",
+      value: "80",
+    },
+    {
+      label: "CSS",
+      value: "52",
+    },
+  ];
+  return (
+    <section className="section">
+      <Wrapper className="section-center">
+        <Pie3D data={chartData} />
+          {/* <ExampleChart data={chartData} />; */}
+      </Wrapper>
+    </section>
+  );
+ 
 };
 
 const Wrapper = styled.div`
