@@ -5,7 +5,24 @@ import { AuthWrapper } from '../pages';
 import { ExampleChart, Pie3D, Column3D, Bar3D, Doughnut2D } from './Charts';
 const Repos = () => {
   const {repos } = useContext(GithubContext);
-  
+
+  let languages = repos.reduce((total, item) => {
+    const {language} = item;
+  if(!language) return total;
+  if(!total[language]){
+    total[language] = {label:language, value: 1};
+  } else {
+    total[language] = {...total[language].value + 1}
+  }
+    return total;
+  }, {})
+  languages = Object.values(languages).sort((a,b) =>{
+    return b.value - a.value;
+  }).slice(0, 5);
+
+
+  console.log(languages)
+
   const chartData = [
     {
       label: "HTML",
@@ -25,7 +42,8 @@ const Repos = () => {
     <section className="section">
       <Wrapper className="section-center">
         <Pie3D data={chartData} />
-          {/* <ExampleChart data={chartData} />; */}
+        <ExampleChart data={languages} />;
+        <Doughnut2D data={chartData} />
       </Wrapper>
     </section>
   );
