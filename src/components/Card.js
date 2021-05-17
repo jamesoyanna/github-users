@@ -33,7 +33,7 @@ const {
           <p>
             <MdLocationOn /> {location || "Earth"}
           </p>
-          <a href={`https://${blog}`}>
+          <a href={`${blog}`}>
             <MdLink /> {blog}
           </a>
         </div>
