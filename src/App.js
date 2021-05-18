@@ -6,7 +6,10 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact component={Dashboard} />
+        <PrivateRoute path="/" exact>
+          <Dashboard />
+        </PrivateRoute>
+
         <Route path="/login" component={Login} />
         <Route path="*" component={Error} />
       </Switch>
