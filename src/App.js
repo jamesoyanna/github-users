@@ -4,16 +4,18 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <PrivateRoute path="/" exact>
-          <Dashboard />
-        </PrivateRoute>
+    <AuthWrapper>
+      <Router>
+        <Switch>
+          <PrivateRoute path="/" exact>
+            <Dashboard />
+          </PrivateRoute>
 
-        <Route path="/login" component={Login} />
-        <Route path="*" component={Error} />
-      </Switch>
-    </Router>
+          <Route path="/login" component={Login} />
+          <Route path="*" component={Error} />
+        </Switch>
+      </Router>
+    </AuthWrapper>
   );
 }
 

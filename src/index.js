@@ -12,6 +12,7 @@ ReactDOM.render(
       domain= "dev-5nzo0adz.us.auth0.com"
       clientId="RAap2zNshl2zTG6rhzeA7WvpQE6Kb73F" 
       redirectUri= {window.location.origin}
+      cacheLocation= "localstorage"
       >
       <GithubProvider>
         <App />
