@@ -1,3 +1,8 @@
+
+This project is a web application for searching specific detail of a GitHub user. 
+The application consumes the GitHub search API designed to find details of a Github
+user such as the number of a repository, stars, followers, most popular repository, etc.
+
 ## Starter Project
 
 - css provided (global styles, styled components)
@@ -101,8 +106,6 @@ In order for routing to work on netlify, redirects was added to the public folde
 /*    /index.html   200
 
 ```
-
-[Redirects Blog Post](https://dev.to/dance2die/page-not-found-on-netlify-with-react-router-58mc)
 
 #### Warnings and create-react-app
 
