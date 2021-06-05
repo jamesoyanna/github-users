@@ -3,6 +3,12 @@ This project is a web application for searching specific detail of a GitHub user
 The application consumes the GitHub search API designed to find details of a Github
 user such as the number of a repository, stars, followers, most popular repository, etc.
 
+Each endpoint in the Search API uses query parameters to perform searches on GitHub. 
+
+The individual endpoint in the Search API is provided.
+A query can contain any combination of search qualifiers supported on GitHub.
+
+
 ## Starter Project
 
 - css provided (global styles, styled components)
